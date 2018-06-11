@@ -1,0 +1,13 @@
+{
+	"id": "search",
+	"image": "debiki/talkyard-search:v0.6.6-ce61ac7",
+	"port": 9000,
+	"volumes": {
+		"search_data": "/usr/share/elasticsearch/data/",
+		"search_logs": "/usr/share/elasticsearch/logs/"
+	},
+	"env": {
+		"bootstrap.memory_lock": "true",
+		"ES_JAVA_OPTS": "-Xms512m -Xmx512m"
+	}
+}
