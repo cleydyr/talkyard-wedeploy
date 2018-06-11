@@ -1,0 +1,11 @@
+{
+	"id": "cache",
+	"image": "debiki/talkyard-cache:v0.6.6-ce61ac7",
+	"volumes": {
+		"data": "/data/",
+		"redis_logs": "/var/log/redis/"
+	},
+	"env": {
+		"POSTGRES_PASSWORD": "change_me"
+	}
+}
