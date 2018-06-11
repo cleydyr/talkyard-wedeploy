@@ -1,7 +1,6 @@
 {
 	"id": "rdb",
 	"image": "debiki/talkyard-rdb:v0.6.6-ce61ac7",
-	"port": 9000,
 	"volumes": {
 		"rdb_data": "/var/lib/postgresql/data/",
 		"rdb_logs": "var/log/postgresql/"
