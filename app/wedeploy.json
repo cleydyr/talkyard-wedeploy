@@ -10,5 +10,6 @@
 	},
 	"env": {
 		"POSTGRES_PASSWORD": "change_me"
-	}
+	},
+	"dependencies": ["rdb", "search", "cache"]
 }
