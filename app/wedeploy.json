@@ -1,15 +1,11 @@
 {
 	"id": "app",
-	"image": "debiki/talkyard-app:v0.6.6-ce61ac7",
 	"port": 9000,
 	"volumes": {
 		"conf": "/opt/talkyard/app/conf/app-prod-override.conf:ro",
 		"uploads": "/opt/talkyard/uploads/",
 		"backups": "/opt/talkyard/backup-archives/:ro",
 		"logs": "/var/log/talkyard/"
-	},
-	"env": {
-		"POSTGRES_PASSWORD": "change_me"
 	},
 	"dependencies": ["rdb", "search", "cache"]
 }

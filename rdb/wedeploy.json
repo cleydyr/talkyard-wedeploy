@@ -1,10 +1,6 @@
 {
 	"id": "rdb",
-	"image": "postgres:10.4-alpine",
-	"env": {
-	  "POSTGRES_USER": "root",
-	  "POSTGRES_PASSWORD": "passw0rd"
-	},
+	"image": "debiki/talkyard-rdb:v0.6.6-ce61ac7",
 	"volumes": {
 	  "data": "/var/lib/postgresql/data"
 	}
