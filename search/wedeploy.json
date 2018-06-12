@@ -2,8 +2,8 @@
 	"id": "search",
 	"image": "debiki/talkyard-search:v0.6.6-ce61ac7",
 	"volumes": {
-		"search_data": "/usr/share/elasticsearch/data/",
-		"search_logs": "/usr/share/elasticsearch/logs/"
+		"searchdata": "/usr/share/elasticsearch/data/",
+		"searchlogs": "/usr/share/elasticsearch/logs/"
 	},
 	"env": {
 		"ES_JAVA_OPTS": "-Xms512m -Xmx512m"
