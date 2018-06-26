@@ -1,0 +1,6 @@
+# See https://wiki.postgresql.org/wiki/Streaming_Replication, step 10.
+# Don't forget to edit the primary_conninfo.
+
+standby_mode   = 'on'
+primary_conninfo = 'host= port= user=repl password='
+trigger_file = '/var/lib/postgresql/data/failover_trigger_file'

@@ -1,0 +1,17 @@
+# Docs:
+# - https://wiki.postgresql.org/wiki/Binary_Replication_Tutorial
+# - https://wiki.postgresql.org/wiki/Streaming_Replication#How_to_Use
+
+# rsync to the standby like so:
+# 1) Stop Postgres on the going-to-become standby.
+# 2) Rename recovery.conf.disabled or recovery.done to recovery.conf, on the standby.
+
+# 3) rsync:
+psql postgres postgres -c "SELECT pg_start_backup('rsync to slave ' || now(), true)"
+rsync -acv /var/lib/postgresql/data/ :/var/lib/postgresql/data/ --exclude pg_xlog --exclude postmaster.pid --exclude recovery* --exclude failover_trigger_file --exclude backup_label
+psql postgres postgres -c "SELECT pg_stop_backup()"
+
+# 4) Optionally: (if too much data has been written to the db during the start-stop-backup above)
+rsync -acv /var/lib/postgresql/data/pg_xlog :/var/lib/postgresql/data/
+
+# 5) Start the standby.

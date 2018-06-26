@@ -1,6 +1,5 @@
 {
 	"id": "rdb",
-	"image": "debiki/talkyard-rdb:v0.6.6-ce61ac7",
 	"volumes": {
 	  "rdbdata": "/var/lib/postgresql/data",
 	  "rdblogs": "/var/log/postgresql/"
